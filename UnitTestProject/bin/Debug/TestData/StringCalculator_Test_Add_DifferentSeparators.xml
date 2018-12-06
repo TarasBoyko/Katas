@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestList>
+  <Row arg = "4560&#xA;23" result = "4583" />
+
+    <Row arg = "-0
+0" result = "0" />
+  <Row arg = "0
+-0" result = "0" />
+  <Row arg = "-0
+-0" result = "0" />  
+  <Row arg = "7,13
+40" result = "60" />
+  <Row arg = "100
+100, 100" result = "300" />
+  <Row arg = "1,1&#xA;1,1" result = "4" />
+  <Row arg = "9&#xA;9,9&#xA;9" result = "36" />
+  <Row arg = "1&#xA;2&#xA;3&#xA;4&#xA;5&#xA;6123678&#xA;8&#xA;9&#xA;0&#xA;1&#xA;99" result = "6123810" />
+  <Row arg = "12&#xA;1,0,0,0,0,-0,0&#xA;342" result = "355" />
+  <Row arg = "1,2,3,4,5,6123678,8,9&#xA;0&#xA;1&#xA;99" result = "6123810" />
+
+  <!--tests data for custom delimiters (this delimiters are one character)-->
+  <Row arg = "//;&#xA;800;500" result = "1300" />
+  <Row arg = "//;&#xA;1;2" result = "3" />
+  <Row arg = "//,&#xA;4,4,4,4,4,4,4,4,4,4" result = "40" />
+  <Row arg = "//&#xA;&#xA;6&#xA;3" result = "9" />
+  <Row arg = "//&#xA;&#xA;77&#xA;23&#xA;50&#xA;30&#xA;0" result = "180" />
+
+  <!--escaped characters-->
+  <Row arg = "//&quot;&#xA;60&quot;40" result = "100" />
+  <Row arg = "//&apos;&#xA;62&apos;43" result = "105" />
+  <Row arg = "//&lt;&#xA;61&lt;41" result = "102" />
+  <Row arg = "//&gt;&#xA;765&gt;2" result = "767" />
+  <Row arg = "//&amp;&#xA;16&amp;4" result = "20" />
+  <Row arg = "//&amp;&#xA;6&amp;4&amp;5&amp;5&amp;0" result = "20" />
+   
+  <Row arg = "///&amp;4/4" result = "8" />
+  <Row arg = "///&amp;449/0" result = "449" />
+  <Row arg = "///&amp;1/0" result = "1" />
+  <Row arg = "///&amp;0/0" result = "0" />
+  
+  <Row arg = "//\&amp;0\0" result = "0" />
+  <Row arg = "//\&amp;1\0" result = "1" />
+  <Row arg = "//\&amp;0\1" result = "1" />
+  <Row arg = "//\&amp;1\1" result = "2" />
+  <Row arg = "//\&amp;9\9" result = "18" />
+  <Row arg = "//\&amp;46\4\2\3" result = "55" />
+</TestList>

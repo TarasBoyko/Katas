@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestList>
+  <Row arg = "-0" result = "0" />
+  <Row arg = "0" result = "0" />
+  <Row arg = "1" result = "1" />
+  <Row arg = "2" result = "2" />
+  <Row arg = "3" result = "3" />
+  <Row arg = "4" result = "4" />
+  <Row arg = "5" result = "5" />
+  <Row arg = "6" result = "6" />
+  <Row arg = "7" result = "7" />
+  <Row arg = "8" result = "8" />
+  <Row arg = "9" result = "9" />
+</TestList>

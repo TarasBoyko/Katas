@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestList>
+  <Row arg = "0,0" result = "0" />
+  <Row arg = "0,1" result = "1" />
+  <Row arg = "0,2" result = "2" />
+  <Row arg = "0,3" result = "3" />
+  <Row arg = "0,4" result = "4" />
+  <Row arg = "0,5" result = "5" />
+  <Row arg = "0,6" result = "6" />
+  <Row arg = "0,7" result = "7" />
+  <Row arg = "0,8" result = "8" />
+  <Row arg = "0,9" result = "9" />
+  
+  <Row arg = "1,0" result = "1" />
+  <Row arg = "2,0" result = "2" />
+  <Row arg = "3,0" result = "3" />
+  <Row arg = "4,0" result = "4" />
+  <Row arg = "5,0" result = "5" />
+  <Row arg = "6,0" result = "6" />
+  <Row arg = "7,0" result = "7" />
+  <Row arg = "8,0" result = "8" />
+  <Row arg = "9,0" result = "9" />
+
+  <Row arg = "-1,0" result = "-1" />
+  <Row arg = "-2,0" result = "-2" />
+  <Row arg = "-3,0" result = "-3" />
+  <Row arg = "-4,0" result = "-4" />
+  <Row arg = "-5,0" result = "-5" />
+  <Row arg = "-6,0" result = "-6" />
+  <Row arg = "-7,0" result = "-7" />
+  <Row arg = "-8,0" result = "-8" />
+  <Row arg = "-9,0" result = "-9" />
+
+  <Row arg = "0,-1" result = "-1" />
+  <Row arg = "0,-2" result = "-2" />
+  <Row arg = "0,-3" result = "-3" />
+  <Row arg = "0,-4" result = "-4" />
+  <Row arg = "0,-5" result = "-5" />
+  <Row arg = "0,-6" result = "-6" />
+  <Row arg = "0,-7" result = "-7" />
+  <Row arg = "0,-8" result = "-8" />
+  <Row arg = "0,-9" result = "-9" />
+  
+  <Row arg = "-2147483648,0" result = "-2147483648" />
+  <Row arg = "-2147483647,0" result = "-2147483647" />
+  <Row arg = "-2147483648,1" result = "-2147483647" />
+  <Row arg = "-214748364,0" result = "-214748364" />
+  <Row arg = "-2147483648,2147483647" result = "-1" />
+  <Row arg = "-1073741824,-1073741824" result = "-2147483648" />
+  <Row arg = "2147483647,0" result = "2147483647" />
+  <Row arg = "0,2147483646" result = "2147483646" />
+  <Row arg = "1073741824,1073741823" result = "2147483647" />
+  <Row arg = "1073741823,1073741824" result = "2147483647" />  
+
+  <Row arg = "2,2" result = "4" />
+  <Row arg = "5,8" result = "13" />
+  <Row arg = "9,1" result = "10" />
+  <Row arg = "9,9" result = "18" />
+  <Row arg = "5,5" result = "10" />
+  <Row arg = "1,1" result = "2" />
+  <Row arg = "6,6" result = "12" />
+  <Row arg = "7,8" result = "15" />
+  <Row arg = "-20,19" result = "-1" />
+  <Row arg = "-7890,7891" result = "1" />  
+</TestList>

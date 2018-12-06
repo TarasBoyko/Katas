@@ -1,0 +1,11 @@
+D:\VS_Projects\Katas\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\UnitTestProject.dll
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\UnitTestProject.pdb
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\Kata1.exe
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\Kata1.pdb
+D:\VS_Projects\Katas\UnitTestProject\obj\Debug\UnitTestProject.dll
+D:\VS_Projects\Katas\UnitTestProject\obj\Debug\UnitTestProject.pdb
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_InputOneNumber.xml
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_InputTwoNumbers.xml
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_DifferentSeparators.xml
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_NegativeNumbers.xml
