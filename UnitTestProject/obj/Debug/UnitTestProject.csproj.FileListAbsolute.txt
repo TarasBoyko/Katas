@@ -9,3 +9,5 @@ D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Ad
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_InputTwoNumbers.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_DifferentSeparators.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_NegativeNumbers.xml
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_MoreThan1000.xml
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_LenghtOfDelimiter.xml

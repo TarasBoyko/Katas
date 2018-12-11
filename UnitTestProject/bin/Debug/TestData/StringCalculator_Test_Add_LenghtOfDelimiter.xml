@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestList>
+  <!--delimiters with lenght 1-->
+  <Row arg = "801,592" result = "1393" />
+  <Row arg = "643592&#xA;342&#xA;1000&#xA;1001&#xA;2147483647" result = "1342" />
+  <Row arg = "//[,]&#xA;800,502" result = "1302" />
+  <Row arg = "//[,]&#xA;880,502,0,1,9,10,1000000,2147483646,2147483646" result = "1402" />
+  <Row arg = "//[&#xA;]&#xA;800&#xA;502" result = "1302" />
+  <Row arg = "//[-]&#xA;800-502" result = "1302" />
+  <Row arg = "//[&#xA;]&#xA;880&#xA;502&#xA;0&#xA;1&#xA;9&#xA;10&#xA;1000000&#xA;2147483646&#xA;2147483646" result = "1402" />
+
+  <!--delimiters with lenght 2-->
+  <Row arg = "//[**]&#xA;80**50" result = "130" />
+  <Row arg = "//[++]&#xA;0++0" result = "0" />
+  <Row arg = "//[--]&#xA;345--500" result = "845" />
+  <Row arg = "//[//]&#xA;1000//1000" result = "2000" />
+  <Row arg = "//[%%]&#xA;1001%%1000" result = "1000" />
+  <Row arg = "//[!!]&#xA;1000!!1001" result = "1000" />
+  <Row arg = "//[№№]&#xA;1001№№1000" result = "1000" />
+  <Row arg = "//[@@]&#xA;70@@50" result = "120" />
+  <Row arg = "//[^+]&#xA;789^+50" result = "839" />
+  <Row arg = "//[+^]&#xA;711+^50" result = "761" />
+  <Row arg = "//[$$]&#xA;1001$$1001" result = "0" />
+  <Row arg = "//[((]&#xA;85673((100156" result = "0" />
+  <Row arg = "//[))]&#xA;2147483647))2147483647" result = "0" />
+  <Row arg = "//[\\]&#xA;2147483646\\2147483647" result = "0" />
+  <Row arg = "//[=-]&#xA;0=-1=-9=-999=-1000=-1001=-58693=-2147483647" result = "2009" />
+
+  <Row arg = "//[&#xA;&#xA;]&#xA;800&#xA;&#xA;502" result = "1302" />
+  <Row arg = "//[&quot;&quot;]&#xA;60&quot;&quot;40" result = "100" />
+  <Row arg = "//[&apos;&apos;]&#xA;62&apos;&apos;43" result = "105" />
+  <Row arg = "//[&lt;&lt;]&#xA;61&lt;&lt;41" result = "102" />
+  <Row arg = "//[&gt;&gt;]&#xA;765&gt;&gt;2" result = "767" />
+  <Row arg = "//[&amp;&amp;]&#xA;16&amp;&amp;4" result = "20" />
+  <Row arg = "//[&amp;&lt;]&#xA;16&amp;&lt;4" result = "20" />
+  <Row arg = "//[&#xA;&lt;]&#xA;16&#xA;&lt;4" result = "20" />
+  <Row arg = "//[&lt;&#xA;]&#xA;16&lt;&#xA;4" result = "20" />
+  
+  <!--delimiters with lenght 3-->
+  <Row arg = "//[#$@]&#xA;333#$@222#$@4#$@1#$@1001" result = "560" />
+  <Row arg = "//[&#xA;&#xA;&#xA;]&#xA;900&#xA;&#xA;&#xA;502&#xA;&#xA;&#xA;4&#xA;&#xA;&#xA;1&#xA;&#xA;&#xA;3000" result = "1407" />
+  <Row arg = "//[#$&#xA;]&#xA;700#$&#xA;1502#$&#xA;4#$&#xA;1#$&#xA;1001" result = "705" />
+</TestList>

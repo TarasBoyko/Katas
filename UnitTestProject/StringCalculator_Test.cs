@@ -39,7 +39,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_InputOneNumber.xml",
+            "TestData\\StringCalculator_Test_Add_InputTwoNumbers.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
@@ -97,8 +97,37 @@ namespace UnitTestProject
             //Assert.AreEqual(expectedResult, actualResult, "arg " + arg + "\nexpected " + expectedResult + "\nactual " + actualResult);
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
+            "TestData\\StringCalculator_Test_Add_MoreThan1000.xml",
+            "Row",
+            DataAccessMethod.Sequential)
+        ]
+        [TestMethod]
+        public void Add_MoreThan1000()
+        {
+            string arg = Convert.ToString(TestContext.DataRow["arg"]);
+            int expectedResult = Convert.ToInt32(TestContext.DataRow["result"]);
 
+            int actualResult = stringCalculator.Add(arg);
 
+            Assert.AreEqual(expectedResult, actualResult, "arg " + arg + "\nexpected " + expectedResult + "\nactual " + actualResult);
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
+            "TestData\\StringCalculator_Test_Add_LenghtOfDelimiter.xml",
+            "Row",
+            DataAccessMethod.Sequential)
+        ]
+        [TestMethod]
+        public void Add_LenghtOfDelimiter()
+        {
+            string arg = Convert.ToString(TestContext.DataRow["arg"]);
+            int expectedResult = Convert.ToInt32(TestContext.DataRow["result"]);
+
+            int actualResult = stringCalculator.Add(arg);
+
+            Assert.AreEqual(expectedResult, actualResult, "arg " + arg + "\nexpected " + expectedResult + "\nactual " + actualResult);
+        }
 
         #region Additional test attributes
         //

@@ -40,6 +40,8 @@
   <Row arg = "2147483647&#xA;-2147483648" exceptionMessage="negatives not allowed [-2147483648]" />
   <Row arg = "-2147483647&#xA;2147483647" exceptionMessage="negatives not allowed [-2147483647]" />
   <Row arg = "-2147483646&#xA;2147483647" exceptionMessage="negatives not allowed [-2147483646]" />
+  <Row arg = "-20,19" exceptionMessage="negatives not allowed [-20]" />
+  <Row arg = "-7890,7891" exceptionMessage="negatives not allowed [-7890]" />
 
   <Row arg = "-1&#xA;-1" exceptionMessage="negatives not allowed [-1, -1]" />
   <Row arg = "-1&#xA;-1&#xA;-1" exceptionMessage="negatives not allowed [-1, -1, -1]" />
@@ -53,14 +55,13 @@
   <Row arg = "-56789,56789,56789,-56789,-56789,-56789,56789" exceptionMessage="negatives not allowed [-56789, -56789, -56789, -56789]" />
 
   <!--escaped characters-->
-  <Row arg = "//&quot;&#xA;-60&quot;-40" exceptionMessage="negatives not allowed [-60, -40]" />
-  <Row arg = "//&apos;&#xA;-62&apos;-43" exceptionMessage="negatives not allowed [-62, -43]" />
-  <Row arg = "//&lt;&#xA;-61&lt;-41" exceptionMessage="negatives not allowed [-61, -41]" />
-  <Row arg = "//&gt;&#xA;765&gt;-2" exceptionMessage="negatives not allowed [-2]" />
-  <Row arg = "//&amp;&#xA;-5&amp;-4" exceptionMessage="negatives not allowed [-5, -4]" />
-  <Row arg = "//&amp;&#xA;-6&amp;-4&amp;5&amp;5&amp;0" exceptionMessage="negatives not allowed [-6, -4]" />
+  <Row arg = "//[&quot;]&#xA;-60&quot;-40" exceptionMessage="negatives not allowed [-60, -40]" />
+  <Row arg = "//[&apos;]&#xA;-62&apos;-43" exceptionMessage="negatives not allowed [-62, -43]" />
+  <Row arg = "//[&lt;]&#xA;-61&lt;-41" exceptionMessage="negatives not allowed [-61, -41]" />
+  <Row arg = "//[&gt;]&#xA;765&gt;-2" exceptionMessage="negatives not allowed [-2]" />
+  <Row arg = "//[&amp;]&#xA;-5&amp;-4" exceptionMessage="negatives not allowed [-5, -4]" />
+  <Row arg = "//[&amp;]&#xA;-6&amp;-4&amp;5&amp;5&amp;0" exceptionMessage="negatives not allowed [-6, -4]" />
 
-  <Row arg = "///&#xA;-3/4" exceptionMessage="negatives not allowed [-3]" />
-  <Row arg = "//\&#xA;-46\-4\-2\-3" exceptionMessage="negatives not allowed [-46, -4, -2, -3]" />
+  <Row arg = "//[/]&#xA;-3/4" exceptionMessage="negatives not allowed [-3]" />
+  <Row arg = "//[\]&#xA;-46\-4\-2\-3" exceptionMessage="negatives not allowed [-46, -4, -2, -3]" />
 </TestList>
-

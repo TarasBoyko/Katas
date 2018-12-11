@@ -54,7 +54,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="StringCalculator_Test.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,9 +75,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="TestData\StringCalculator_Test_Add_LenghtOfDelimiter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\StringCalculator_Test_Add_NegativeNumbers.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TestData\StringCalculator_Test_Add_MoreThan1000.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Choose>
