@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractLogger.cs" />
+    <Compile Include="CalculationResultLogger.cs" />
+    <Compile Include="CalculationResultLoggerMock.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="LoggingStringCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringCalculator.cs" />

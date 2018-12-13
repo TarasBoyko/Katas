@@ -53,6 +53,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LoggingStringCalculator_Test.cs" />
+    <Compile Include="StringCalculatorStub.cs" />
     <Compile Include="StringCalculator_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +65,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LoggingStringCalculator_logs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\StringCalculator_Test_Add_InputOneNumber.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

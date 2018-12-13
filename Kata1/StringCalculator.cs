@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
+    // Provides methods for calculation expressions in special string format.
     public class StringCalculator
     {
-        public int Add(string inputString)
+        // Returns the amount of number list in special string format.
+        // The format: ("//" [delimiter1][delimiter2]... \n number1 some_delimiter number2 some_delimiter ...) or
+        //             (number1 delimiter number2 delimiter (where "delimiter" is ',' or '\n'))
+        // @inputString specifies string in the special string format, that will be calculated.
+        public virtual int Add(string inputString)
         {
             if (inputString == null)
             {
