@@ -45,8 +45,10 @@
   <ItemGroup>
     <Compile Include="AbstractLogger.cs" />
     <Compile Include="CalculationResultLogger.cs" />
-    <Compile Include="CalculationResultLoggerMock.cs" />
+    <Compile Include="CalculationResultLogger_Mock_NormalWrite.cs" />
     <Compile Include="ILogger.cs" />
+    <Compile Include="IStringCalculator.cs" />
+    <Compile Include="IWebService.cs" />
     <Compile Include="LoggingStringCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

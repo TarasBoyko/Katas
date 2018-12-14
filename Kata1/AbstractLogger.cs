@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Kata1
 {
     // Abstract logger, that contains the path to log file.
-    public abstract class AbstractLogger : ILogger
+    abstract class AbstractLogger : ILogger
     {
         // @filePath specifies the path to log file
         public AbstractLogger(string filePath)

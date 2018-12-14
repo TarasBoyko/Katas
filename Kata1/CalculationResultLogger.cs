@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Kata1
 {
     // Logger for calculation results.
-    public class CalculationResultLogger : AbstractLogger
+    class CalculationResultLogger : AbstractLogger
     {
         // Initializes "CalculationResultLogger" object.
         // @filePath specifies the path to log file.

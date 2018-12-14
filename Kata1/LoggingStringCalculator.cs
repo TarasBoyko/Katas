@@ -10,15 +10,16 @@ namespace Kata1
     // A class for logging results of "StringCalculator" instance.
     // The logging happens depend on "ILogger" instance.
     // The calculation happens depend on "StringCalculator" instance.
-    public class LoggingStringCalculator
+    class LoggingStringCalculator
     {
         // Initializes "LoggingStringCalculator" object.
         // @stringCalculator specifies instance of "StringCalculator".
         // @logger specifies instance of "ILogger".
-        public LoggingStringCalculator(StringCalculator stringCalculator, ILogger logger)
+        public LoggingStringCalculator(IStringCalculator stringCalculator, ILogger logger, IWebService webService)
         {
             m_stringCalculator = stringCalculator;
             m_logger = logger;
+            m_webService = webService;
         }
 
         // Calculates the amount of number list in special string format and logs and returns the result.
@@ -26,11 +27,19 @@ namespace Kata1
         public int Add(string inputString)
         {
             int result = m_stringCalculator.Add(inputString);
-            m_logger.Write(result.ToString());
+            try
+            {
+                m_logger.Write(result.ToString());
+            }
+            catch (Exception e)
+            {
+                m_webService.HandleLoggingFailure(e.Message);
+            }
             return result;
         }
 
-        protected StringCalculator m_stringCalculator; // "StringCalculator" instance
-        protected ILogger m_logger; // "ILogger" instance.
+        protected IStringCalculator m_stringCalculator; // "IStringCalculator" instance
+        protected ILogger m_logger; // "ILogger" instance
+        protected IWebService m_webService; // "IWebService" instance
     }
 }

@@ -53,8 +53,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CalculationResultLogger_Mock_LoggingFailure.cs" />
+    <Compile Include="IWebService_Stub.cs" />
     <Compile Include="LoggingStringCalculator_Test.cs" />
-    <Compile Include="StringCalculatorStub.cs" />
+    <Compile Include="IStringCalculator_Stub_Add_ReturnValue.cs" />
     <Compile Include="StringCalculator_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

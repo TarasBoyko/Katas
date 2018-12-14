@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Kata1
 {
     // Provides methods for calculation expressions in special string format.
-    public class StringCalculator
+    class StringCalculator : IStringCalculator
     {
         // Returns the amount of number list in special string format.
         // The format: ("//" [delimiter1][delimiter2]... \n number1 some_delimiter number2 some_delimiter ...) or
@@ -73,9 +73,9 @@ namespace Kata1
                 argReges = new Regex("^(?<firstNumber>" + numberInRegex + ")((" + defaultDelimitersInRegex + ")(?<otherNumbers>" + numberInRegex + "))*$");
             }
 
-            if (argReges.Matches(inputString).Count != 1) // if inputString is not correct form
+            if (argReges.Matches(inputString).Count != 1) // if inputString is not in correct form
             {
-                throw new ArgumentException();
+                throw new ArgumentException("input string is not in correct form");
             }
 
             // parse the numbers

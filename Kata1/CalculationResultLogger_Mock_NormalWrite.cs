@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace Kata1
 {
     // A mock class for "CalculationResultLogger".
-    public class CalculationResultLoggerMock : AbstractLogger
+    class CalculationResultLogger_Mock_NormalWrite : AbstractLogger
     {
         // Always assigns "LoggingStringCalculator_logs.txt" as path to log file.
-        // @filePath specifies fictive parameter of the method.
-        public CalculationResultLoggerMock(string filePath) : base("LoggingStringCalculator_logs.txt")
+        // @filePath specifies fake parameter of the method.
+        public CalculationResultLogger_Mock_NormalWrite(string filePath) : base("LoggingStringCalculator_logs.txt")
         {
             ;
         }
@@ -20,7 +20,7 @@ namespace Kata1
         // Always adds string "The last calculation result is 10. 12.12.2018 16:03:26\r\n" to
         // log file with path "LoggingStringCalculator_logs.txt".
         // If predefined log file does not exist, exception "FileNotFoundException" is thrown.
-        // @data specifies fictive parameter of the method.
+        // @data specifies fake parameter of the method.
         public override void Write(string data)
         {
             if (!File.Exists("LoggingStringCalculator_logs.txt"))

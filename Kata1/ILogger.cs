@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace Kata1
 {
     // Interface for logging.
-    public interface ILogger
+    interface ILogger
     {
         // Appends to predefined resource @data in predefined format optionaly with some service data.
+        // @data specifies data, that will be logged.
         void Write(string data);
     }
 }
