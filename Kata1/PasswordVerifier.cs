@@ -9,14 +9,11 @@ namespace Kata1
     // A class for password verifications.
     class PasswordVerifier
     {
-        int numberOfTrueConditions = 5;
+        // If @password is valid returns true,
+        // otherwise returns false.
+        // @password specifies a password for verification.
         public bool Verify(string password)
         {
-            if (password == null)
-            {
-                throw new ArgumentNullException("password", "password should not be null");
-            }
-
             try
             {
                 password.First((c) => Char.IsLower(c));
@@ -26,31 +23,52 @@ namespace Kata1
                 return false;
             }
 
+            // Already 2 conditions are true.
+
             const int passwordMinLength = 9;
-            if (password.Length < passwordMinLength)
+            List<Func<string, bool>> partOfConditions = new List<Func<string, bool>>
             {
-                numberOfTrueConditions--;
+                { (str) => { return str.Length >= passwordMinLength; }},
+                { (str) =>
+                    {
+                        try
+                            {
+                                str.First((c) => Char.IsDigit(c));
+                            }
+                        catch (InvalidOperationException)
+                        {
+                            return false;
+                        }
+                        return true;
+                    }
+                },
+                { (str) =>
+                    {
+                        try
+                            {
+                                str.First((c) => Char.IsUpper(c));
+                            }
+                        catch (InvalidOperationException)
+                        {
+                            return false;
+                        }
+                        return true;
+                    }
+                }
+            };
+
+            // If at least one with other conditions is true,
+            // than @password is valid,
+            // otherwise @password is invalid.
+            foreach (Func<string, bool> predicate in partOfConditions)
+            {
+                if (predicate(password))
+                {
+                    return true;
+                }
             }
 
-            
-            try
-            {
-                password.First((c) => Char.IsUpper(c));
-            }
-            catch (InvalidOperationException)
-            {
-                numberOfTrueConditions--;
-            }
-            try
-            {
-                password.First((c) => Char.IsDigit(c));
-            }
-            catch (InvalidOperationException)
-            {
-                numberOfTrueConditions--;
-            }
-
-            return numberOfTrueConditions >= 3;
-        }
-    }
-}
+            return false;
+        } // Verify
+    } // PasswordVerifier
+} // Kata1

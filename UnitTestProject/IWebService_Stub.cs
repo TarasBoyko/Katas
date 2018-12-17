@@ -25,7 +25,8 @@ namespace UnitTestProject
             return m_HandleLoggingFailure_return;
         }
 
-        protected readonly bool m_HandleLoggingFailure_return; // a value, that "HandleLoggingFailure" always returns
         public string HandleLoggingFailure_param_message { get; protected set; } // the last value of parameter @message of "HandleLoggingFailure" method
+
+        protected readonly bool m_HandleLoggingFailure_return; // a value, that "HandleLoggingFailure" always returns       
     }
 }

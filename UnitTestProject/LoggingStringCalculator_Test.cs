@@ -14,14 +14,34 @@ namespace UnitTestProject
     [TestClass]
     public class LoggingStringCalculator_Test
     {
-        public LoggingStringCalculator_Test()
+        [TestMethod]
+        public void Add_PassValidArg_LoggingSuccess_ReturnCorrectValue()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            IStringCalculator calculator_stub = new IStringCalculator_Stub_Add_ReturnValue(10);
+            ILogger logger_mock = new CalculationResultLogger_Mock_NormalWrite("LoggingStringCalculator_logs.txt");
+            LoggingStringCalculator calculator = new LoggingStringCalculator(calculator_stub, logger_mock, null);
+            string fileContentBeforeOperation = File.ReadAllText("LoggingStringCalculator_logs.txt");
+
+            int addResult = calculator.Add("//[#@%][;&][!!!]\n6!!!2#@%0#@%1;&1");
+
+            string fileContentAfterOperation = File.ReadAllText("LoggingStringCalculator_logs.txt");
+            bool isSuccess = new Regex("^" + fileContentBeforeOperation + "The last calculation result is " + addResult.ToString() + "\\. 12\\.12\\.2018 16:03:26" + Environment.NewLine + "$").IsMatch(fileContentAfterOperation);
+
+            Assert.IsTrue(isSuccess);
         }
 
-        private TestContext testContextInstance;
+        [TestMethod]
+        public void Add_PassValidArg_LoggingFailure_WebServiceNotificationSuccess_ReturnCorrectValue()
+        {
+            IStringCalculator calculator_stub = new IStringCalculator_Stub_Add_ReturnValue(11);
+            ILogger logger_mock = new CalculationResultLogger_Mock_LoggingFailure(null);
+            IWebService_Stub webService_stub = new IWebService_Stub(true);
+            LoggingStringCalculator calculator = new LoggingStringCalculator(calculator_stub, logger_mock, webService_stub);
+
+            calculator.Add("//[#@%][;&][!!!]\n6!!!2#@%0#@%1;&2");
+
+            Assert.AreEqual("logging was failed", webService_stub.HandleLoggingFailure_param_message, "a mesaage for IWebService notification is incorrect" );
+        }
 
         /// <summary>
         ///Gets or sets the test context which provides
@@ -61,34 +81,6 @@ namespace UnitTestProject
         //
         #endregion
 
-
-        [TestMethod]
-        public void LoggingStringCalculator_Test_Add_ReturnCorrectValue_LoggingSuccess()
-        {
-            IStringCalculator calculator_stub = new IStringCalculator_Stub_Add_ReturnValue(10);
-            ILogger logger_mock = new CalculationResultLogger_Mock_NormalWrite("LoggingStringCalculator_logs.txt");
-
-            LoggingStringCalculator calculator = new LoggingStringCalculator(calculator_stub, logger_mock, null);
-            string fileContentBeforeOperation = File.ReadAllText("LoggingStringCalculator_logs.txt");
-
-            int addResult = calculator.Add("//[#@%][;&][!!!]\n6!!!2#@%0#@%1;&1");
-
-            string fileContentAfterOperation = File.ReadAllText("LoggingStringCalculator_logs.txt");
-            bool isSuccess = new Regex("^" + fileContentBeforeOperation + "The last calculation result is " + addResult.ToString() + "\\. \\d\\d\\.\\d\\d\\.\\d\\d\\d\\d \\d\\d:\\d\\d:\\d\\d" + Environment.NewLine + "$").IsMatch(fileContentAfterOperation);
-            Assert.IsTrue(isSuccess);
-        }
-
-        [TestMethod]
-        public void LoggingStringCalculator_Test_Add_ReturnCorrectValue_LoggingFailure_WebServiceNotificationSuccess()
-        {
-            IStringCalculator calculator_stub = new IStringCalculator_Stub_Add_ReturnValue(11);
-            ILogger logger_mock = new CalculationResultLogger_Mock_LoggingFailure(null);
-            IWebService_Stub webService_stub = new IWebService_Stub(true);
-            LoggingStringCalculator calculator = new LoggingStringCalculator(calculator_stub, logger_mock, webService_stub);
-
-            calculator.Add("//[#@%][;&][!!!]\n6!!!2#@%0#@%1;&2");
-
-            Assert.AreEqual("logging was failed", webService_stub.HandleLoggingFailure_param_message, "a mesaage for IWebService notification is incorrect" );
-        }
-    }
-}
+        private TestContext testContextInstance;
+    } // LoggingStringCalculator_Test
+} // UnitTestProject

@@ -71,29 +71,29 @@
     <Content Include="LoggingStringCalculator_logs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\PasswordVerifier_Test_Verify_PassNonNullArg.xml">
+    <Content Include="TestData\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_InputOneNumber.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_InputTwoNumbers.xml">
+    <Content Include="TestData\StringCalculator_Test_Add_PassOneNumber_ReturnSum.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_DifferentSeparators.xml">
+    <Content Include="TestData\StringCalculator_Test_Add_PassTwoNumbers_ReturnSum.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_LenghtOfDelimiter.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_NegativeNumbers.xml">
+    <Content Include="TestData\StringCalculator_Test_Add_PassArgWithDifferentSeparators_ReturnSum.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_MoreThan1000.xml">
+    <Content Include="TestData\StringCalculator_Test_Add_PassArgWithUnlimitedDelimiter_ReturnSum.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\StringCalculator_Test_Add_Add_PassArgWithNegativeNumbers_ExceptionIsThrown.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TestData\StringCalculator_Test_Add_PassArgWithNumbersWithValueMoreThan1000_ReturnSumIgnoringTheseNumbers.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

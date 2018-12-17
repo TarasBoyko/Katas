@@ -66,7 +66,7 @@ namespace Kata1
                 
                 // form full regular expression
                 argReges = new Regex("^//(\\[(?<delimiter>(.|\\n)+?)\\])+?\\n" + "(?<firstNumber>" + numberInRegex + ")(" + actualDelimiters + "(?<otherNumbers>" + numberInRegex + "))*$");
-            }
+            } // if
             else
             {
                 string defaultDelimitersInRegex = ",|\n"; // default delimiters separated by '|'. To screen '|' use '\|'.
@@ -107,6 +107,6 @@ namespace Kata1
             }
    
             return result;
-        }
-    }
-}
+        } // Add
+    } // StringCalculator
+} // Kata1

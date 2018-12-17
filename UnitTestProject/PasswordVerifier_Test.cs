@@ -8,45 +8,46 @@ namespace UnitTestProject
     public class PasswordVerifier_Test
     {
         [TestMethod]
-        public void Verify_PassNull_ThrowNullArgumentException()
+        public void Verify_PassNull_ThrowNullArgumentExceptionOrNullReferenceException()
         {
             PasswordVerifier verifier = new PasswordVerifier();
 
             try
             {
                 verifier.Verify(null);
-            }
-            catch (ArgumentNullException e)
+            }          
+            catch (ArgumentNullException)
             {
-                Assert.AreEqual("password should not be null" + Environment.NewLine + "Parameter name: password", e.Message);
-                return;
+                return; // the test passes
+            }
+            catch (NullReferenceException)
+            {
+                return; // the test passes
             }
             catch (Exception)
             {
                 Assert.Fail("the thrown exception is not ArgumentNullException");
             }
-         
+
             Assert.Fail("exception is not thrown");
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\PasswordVerifier_Test_Verify_PassNonNullArg.xml",
+            "TestData\\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
         [TestMethod]
-        public void Verify_PassNonNullArg()
+        public void Verify_PassNonNullArg_ReturnResultOfVerification()
         {
             PasswordVerifier verifier = new PasswordVerifier();
             string arg = Convert.ToString(TestContext.DataRow["arg"]);
             bool expectedResult = Convert.ToBoolean(TestContext.DataRow["result"]);
+
             bool actualResult = verifier.Verify(arg);
 
             Assert.AreEqual(expectedResult, actualResult, "expected and actual results are not equal.\n arg = " + arg + "\nexpected = " + expectedResult + "\nactual = " + actualResult);
-
         }
-
-        private TestContext testContextInstance;
 
         /// <summary>
         ///Gets or sets the test context which provides
@@ -63,5 +64,7 @@ namespace UnitTestProject
                 testContextInstance = value;
             }
         }
-    }
-}
+
+        private TestContext testContextInstance;
+    } // PasswordVerifier_Test
+} // UnitTestProject
