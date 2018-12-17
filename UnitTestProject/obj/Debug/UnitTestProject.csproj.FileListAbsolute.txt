@@ -12,3 +12,4 @@ D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Ad
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_MoreThan1000.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_LenghtOfDelimiter.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\LoggingStringCalculator_logs.txt
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\PasswordVerifier_Test_Verify_PassNonNullArg.xml

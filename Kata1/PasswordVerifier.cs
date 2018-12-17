@@ -9,6 +9,7 @@ namespace Kata1
     // A class for password verifications.
     class PasswordVerifier
     {
+        int numberOfTrueConditions = 5;
         public bool Verify(string password)
         {
             if (password == null)
@@ -19,7 +20,7 @@ namespace Kata1
             const int passwordMinLength = 9;
             if (password.Length < passwordMinLength)
             {
-                throw new ArgumentException("password should be larger than 8 chars");
+                numberOfTrueConditions--;
             }
 
             try
@@ -28,7 +29,7 @@ namespace Kata1
             }
             catch(InvalidOperationException)
             {
-                throw new ArgumentException("password should have one lowercase letter at least");
+                numberOfTrueConditions--;
             }
             try
             {
@@ -36,7 +37,7 @@ namespace Kata1
             }
             catch (InvalidOperationException)
             {
-                throw new ArgumentException("password should have one uppercase letter at least");
+                numberOfTrueConditions--;
             }
             try
             {
@@ -44,10 +45,10 @@ namespace Kata1
             }
             catch (InvalidOperationException)
             {
-                throw new ArgumentException("password should have one number at least");
+                numberOfTrueConditions--;
             }
-           
-            return true;
+
+            return numberOfTrueConditions >= 3;
         }
     }
 }
