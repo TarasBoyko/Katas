@@ -17,20 +17,22 @@ namespace Kata1
                 throw new ArgumentNullException("password", "password should not be null");
             }
 
+            try
+            {
+                password.First((c) => Char.IsLower(c));
+            }
+            catch (InvalidOperationException)
+            {
+                return false;
+            }
+
             const int passwordMinLength = 9;
             if (password.Length < passwordMinLength)
             {
                 numberOfTrueConditions--;
             }
 
-            try
-            {
-                password.First((c) => Char.IsLower(c));              
-            }
-            catch(InvalidOperationException)
-            {
-                numberOfTrueConditions--;
-            }
+            
             try
             {
                 password.First((c) => Char.IsUpper(c));
