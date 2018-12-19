@@ -11,7 +11,7 @@ namespace UnitTestProject
     // "Add" method of the class returns defined in the ctor call value.
     class IStringCalculator_Stub_Add_ReturnValue : IStringCalculator
     {
-        // Initialize "StringCalculator_Stub" object.
+        // Initialize "IStringCalculator_Stub_Add_ReturnValue" object.
         // @Add_return specified assing value for field "m_Add_return".
         public IStringCalculator_Stub_Add_ReturnValue(int Add_return)
         {

@@ -46,14 +46,19 @@
     <Compile Include="AbstractLogger.cs" />
     <Compile Include="CalculationResultLogger.cs" />
     <Compile Include="CalculationResultLogger_Mock_NormalWrite.cs" />
+    <Compile Include="CalculationResultConsoleWriter.cs" />
+    <Compile Include="ConsoleCommandReader.cs" />
+    <Compile Include="IConsoleWriter.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IStringCalculator.cs" />
+    <Compile Include="IUserInput.cs" />
     <Compile Include="IWebService.cs" />
-    <Compile Include="LoggingStringCalculator.cs" />
+    <Compile Include="OutputStringCalculator.cs" />
     <Compile Include="PasswordVerifier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringCalculator.cs" />
+    <Compile Include="UserSampleInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

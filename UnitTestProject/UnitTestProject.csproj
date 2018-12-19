@@ -53,13 +53,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseClasses\ConsoleOutput.cs" />
     <Compile Include="CalculationResultLogger_Mock_LoggingFailure.cs" />
+    <Compile Include="TesteeClasses\ConsoleCommandReader\ConsoleCommandReader_Test.cs" />
+    <Compile Include="ILogger_Stub_Write_ReturnValue.cs" />
     <Compile Include="IWebService_Stub.cs" />
-    <Compile Include="LoggingStringCalculator_Test.cs" />
+    <Compile Include="OutputStringCalculator_Test.cs" />
     <Compile Include="IStringCalculator_Stub_Add_ReturnValue.cs" />
     <Compile Include="StringCalculator_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PasswordVerifier_Test.cs" />
+    <Compile Include="TesteeClasses\ConsoleCommandReader\IUserInput_Stub.cs" />
+    <Compile Include="TextOutputStorageDevice.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kata1\Kata1.csproj">
@@ -68,7 +73,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LoggingStringCalculator_logs.txt">
+    <Content Include="OutputStringCalculator_logs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml">
@@ -97,6 +102,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

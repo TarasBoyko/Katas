@@ -7,7 +7,6 @@ using System.Diagnostics;
 
 namespace UnitTestProject
 {
-    // Tests StringCalculator class.
     [TestClass]
     public class StringCalculator_Test
     {

@@ -8,7 +8,7 @@ namespace UnitTestProject
     public class PasswordVerifier_Test
     {
         [TestMethod]
-        public void Verify_PassNull_ThrowNullArgumentExceptionOrNullReferenceException()
+        public void Verify_PassNull_ThrowNullArgumentException()
         {
             PasswordVerifier verifier = new PasswordVerifier();
 
@@ -17,10 +17,6 @@ namespace UnitTestProject
                 verifier.Verify(null);
             }          
             catch (ArgumentNullException)
-            {
-                return; // the test passes
-            }
-            catch (NullReferenceException)
             {
                 return; // the test passes
             }

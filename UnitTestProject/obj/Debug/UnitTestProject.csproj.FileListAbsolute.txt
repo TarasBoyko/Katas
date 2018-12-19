@@ -5,7 +5,6 @@ D:\VS_Projects\Katas\UnitTestProject\bin\Debug\Kata1.exe
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\Kata1.pdb
 D:\VS_Projects\Katas\UnitTestProject\obj\Debug\UnitTestProject.dll
 D:\VS_Projects\Katas\UnitTestProject\obj\Debug\UnitTestProject.pdb
-D:\VS_Projects\Katas\UnitTestProject\bin\Debug\LoggingStringCalculator_logs.txt
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_PassOneNumber_ReturnSum.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_PassTwoNumbers_ReturnSum.xml
@@ -13,3 +12,4 @@ D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Ad
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_Add_PassArgWithNegativeNumbers_ExceptionIsThrown.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_PassArgWithNumbersWithValueMoreThan1000_ReturnSumIgnoringTheseNumbers.xml
 D:\VS_Projects\Katas\UnitTestProject\bin\Debug\TestData\StringCalculator_Test_Add_PassArgWithUnlimitedDelimiter_ReturnSum.xml
+D:\VS_Projects\Katas\UnitTestProject\bin\Debug\OutputStringCalculator_logs.txt

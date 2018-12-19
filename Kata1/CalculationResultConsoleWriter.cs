@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
-    class Program
+    class CalculationResultConsoleWriter : IConsoleWriter
     {
-        static void Main(string[] args)
+        public virtual void Write(int value)
         {
-            ConsoleCommandReader cr = new ConsoleCommandReader();
-            cr.ListenForCommands();
+            Console.Write("The result is " + value + Environment.NewLine);
         }
     }
 }

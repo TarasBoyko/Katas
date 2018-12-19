@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
-    // Provides methods for calculation expressions in special string format, defined by derived classes..
+    // Provides methods for calculation expressions in special string format, defined by derived classes.
     interface IStringCalculator
     {
         // Returns the amount of number list in special string format.
