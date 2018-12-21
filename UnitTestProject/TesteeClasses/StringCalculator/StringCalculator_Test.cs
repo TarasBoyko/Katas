@@ -21,7 +21,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_PassOneNumber_ReturnSum.xml",
+            "TesteeClasses\\StringCalculator\\TestData\\StringCalculator_Test_Add_PassOneNumber_ReturnSum.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
@@ -38,7 +38,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_PassTwoNumbers_ReturnSum.xml",
+            "TesteeClasses\\StringCalculator\\TestData\\StringCalculator_Test_Add_PassTwoNumbers_ReturnSum.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
@@ -55,7 +55,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_PassArgWithDifferentSeparators_ReturnSum.xml",
+            "TesteeClasses\\StringCalculator\\TestData\\StringCalculator_Test_Add_PassArgWithDifferentSeparators_ReturnSum.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
@@ -72,7 +72,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_Add_PassArgWithNegativeNumbers_ExceptionIsThrown.xml",
+            "TesteeClasses\\StringCalculator\\TestData\\StringCalculator_Test_Add_Add_PassArgWithNegativeNumbers_ExceptionIsThrown.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
@@ -97,7 +97,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_PassArgWithNumbersWithValueMoreThan1000_ReturnSumIgnoringTheseNumbers.xml",
+            "TesteeClasses\\StringCalculator\\TestData\\StringCalculator_Test_Add_PassArgWithNumbersWithValueMoreThan1000_ReturnSumIgnoringTheseNumbers.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
@@ -114,7 +114,7 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\StringCalculator_Test_Add_PassArgWithUnlimitedDelimiter_ReturnSum.xml",
+            "TesteeClasses\\StringCalculator\\TestData\\StringCalculator_Test_Add_PassArgWithUnlimitedDelimiter_ReturnSum.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]

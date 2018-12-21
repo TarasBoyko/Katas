@@ -11,7 +11,7 @@ namespace Kata1
     // The logging happens depend on "ILogger" instance.
     // The calculation happens depend on "IStringCalculator" instance.
     // The output to the standart output stream happens depend on "IConsoleWriter" instance.
-    class OutputStringCalculator
+    class OutputStringCalculator : IOutputStringCalculator
     {
         // Initializes "OutputStringCalculator" object.
         // @stringCalculator specifies instance of "IStringCalculator".
@@ -46,5 +46,5 @@ namespace Kata1
         protected ILogger m_logger; // "ILogger" instance
         protected IConsoleWriter m_consoleWriter; // "IConsoleWriter" instance
         protected IWebService m_webService; // "IWebService" instance
-    }
-}
+    } // OutputStringCalculator
+} // Kata1

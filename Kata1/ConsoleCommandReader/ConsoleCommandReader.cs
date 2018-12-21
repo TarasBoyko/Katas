@@ -20,16 +20,13 @@ namespace Kata1
             m_userInput = new UserSampleInput();
         }
 
-        // Initializes "ConsoleCommandReader" object. Is used by "UnitTestProhect".
-        public ConsoleCommandReader(OutputStringCalculator outputStringCalculator, IUserInput userInput)
+        // Initializes "ConsoleCommandReader" object.
+        // @outputStringCalculator specifies "IOutputStringCalculator" instance.
+        // @userInput specifies "IUserInput" instance.
+        public ConsoleCommandReader(IOutputStringCalculator outputStringCalculator, IUserInput userInput)
         {
             m_OutputStringCalculator = outputStringCalculator; 
             m_userInput = userInput;
-        }
-
-        public ConsoleCommandReader(OutputStringCalculator outputStringCalculator)
-        {
-            m_OutputStringCalculator = outputStringCalculator;
         }
 
         // Listens for user's commands for "OutputStringCalculator" instance and executes them.
@@ -72,7 +69,7 @@ namespace Kata1
             }
         }
 
-        protected OutputStringCalculator m_OutputStringCalculator;
-        protected IUserInput m_userInput;
-    }
-}
+        protected IOutputStringCalculator m_OutputStringCalculator; // "IOutputStringCalculator" instance.
+        protected IUserInput m_userInput; // "IUserInput" instance
+    } // ConsoleCommandReader
+} // Kata1

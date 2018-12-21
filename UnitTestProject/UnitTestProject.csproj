@@ -53,18 +53,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BaseClasses\ConsoleOutput.cs" />
-    <Compile Include="CalculationResultLogger_Mock_LoggingFailure.cs" />
+    <Compile Include="BaseClasses\ConsoleOutput_AbstractTest.cs" />
+    <Compile Include="TesteeClasses\OutputStringCalculator\CalculationResultLogger_Mock_LoggingFailure.cs" />
     <Compile Include="TesteeClasses\ConsoleCommandReader\ConsoleCommandReader_Test.cs" />
-    <Compile Include="ILogger_Stub_Write_ReturnValue.cs" />
-    <Compile Include="IWebService_Stub.cs" />
-    <Compile Include="OutputStringCalculator_Test.cs" />
-    <Compile Include="IStringCalculator_Stub_Add_ReturnValue.cs" />
-    <Compile Include="StringCalculator_Test.cs" />
+    <Compile Include="TesteeClasses\OutputStringCalculator\CalculationResultLogger_Mock_NormalWrite.cs" />
+    <Compile Include="TesteeClasses\OutputStringCalculator\IConsoleWriter_Mock_WriteData.cs" />
+    <Compile Include="TesteeClasses\OutputStringCalculator\IWebService_Stub.cs" />
+    <Compile Include="TesteeClasses\OutputStringCalculator\OutputStringCalculator_Test.cs" />
+    <Compile Include="TesteeClasses\OutputStringCalculator\IStringCalculator_Stub_Add_ReturnValue.cs" />
+    <Compile Include="TesteeClasses\StringCalculator\StringCalculator_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PasswordVerifier_Test.cs" />
+    <Compile Include="TesteeClasses\PasswordVerifier\PasswordVerifier_Test.cs" />
+    <Compile Include="TesteeClasses\ConsoleCommandReader\IOutputStringCalculator_Mock.cs" />
     <Compile Include="TesteeClasses\ConsoleCommandReader\IUserInput_Stub.cs" />
-    <Compile Include="TextOutputStorageDevice.cs" />
+    <Compile Include="Utilities\TextOutputStorageDevice.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kata1\Kata1.csproj">
@@ -76,29 +78,29 @@
     <Content Include="OutputStringCalculator_logs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml">
+    <Content Include="TesteeClasses\PasswordVerifier\TestData\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_PassOneNumber_ReturnSum.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_PassTwoNumbers_ReturnSum.xml">
+    <Content Include="TesteeClasses\StringCalculator\TestData\StringCalculator_Test_Add_PassOneNumber_ReturnSum.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_PassArgWithDifferentSeparators_ReturnSum.xml">
+    <Content Include="TesteeClasses\StringCalculator\TestData\StringCalculator_Test_Add_PassTwoNumbers_ReturnSum.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_PassArgWithUnlimitedDelimiter_ReturnSum.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_Add_PassArgWithNegativeNumbers_ExceptionIsThrown.xml">
+    <Content Include="TesteeClasses\StringCalculator\TestData\StringCalculator_Test_Add_PassArgWithDifferentSeparators_ReturnSum.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="TestData\StringCalculator_Test_Add_PassArgWithNumbersWithValueMoreThan1000_ReturnSumIgnoringTheseNumbers.xml">
+    <Content Include="TesteeClasses\StringCalculator\TestData\StringCalculator_Test_Add_PassArgWithUnlimitedDelimiter_ReturnSum.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TesteeClasses\StringCalculator\TestData\StringCalculator_Test_Add_Add_PassArgWithNegativeNumbers_ExceptionIsThrown.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TesteeClasses\StringCalculator\TestData\StringCalculator_Test_Add_PassArgWithNumbersWithValueMoreThan1000_ReturnSumIgnoringTheseNumbers.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

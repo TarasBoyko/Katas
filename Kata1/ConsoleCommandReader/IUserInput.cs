@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
-    class UserSampleInput : IUserInput
+    // An interface for user's input.
+    interface IUserInput
     {
-        public string ReadLine()
-        {
-            return Console.ReadLine();
-        }
+        // Reads user's until new line character.
+        string ReadLine();
     }
 }

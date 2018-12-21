@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
-    // Interface for web service
+    // An interface for web service
     interface IWebService
     {
         // Handles logging failure.

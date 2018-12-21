@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kata1
 {
-    // A mock class for "CalculationResultLogger".
+    // A mock class for "AbstractLogger".
     class CalculationResultLogger_Mock_NormalWrite : AbstractLogger
     {
         // Always assigns "OutputStringCalculator_logs.txt" as path to log file.

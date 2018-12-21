@@ -29,13 +29,13 @@ namespace UnitTestProject
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-            "TestData\\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml",
+            "TesteeClasses\\PasswordVerifier\\TestData\\PasswordVerifier_Test_Verify_PassNonNullArg_ReturnResultOfVerification.xml",
             "Row",
             DataAccessMethod.Sequential)
         ]
         [TestMethod]
         public void Verify_PassNonNullArg_ReturnResultOfVerification()
-        {
+        { 
             PasswordVerifier verifier = new PasswordVerifier();
             string arg = Convert.ToString(TestContext.DataRow["arg"]);
             bool expectedResult = Convert.ToBoolean(TestContext.DataRow["result"]);

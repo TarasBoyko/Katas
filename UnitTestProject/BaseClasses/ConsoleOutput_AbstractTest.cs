@@ -7,20 +7,25 @@ using System.IO;
 namespace UnitTestProject.BaseClasses
 {
     // A base class for test classes, which test console output.
-    // PRECONDITION: output stream should not be redirected after a testee operation of a testee class.
+    // INVARIANT: output stream should not be redirected after a testee operation of a testee class.
     [TestClass]
-    public class ConsoleOutput
+    public class ConsoleOutput_AbstractTest
     {
-        public ConsoleOutput()
+        // Checkes standard console output stream.
+        public ConsoleOutput_AbstractTest()
         {
-            if (Console.IsOutputRedirected)
+            if (!m_IsCheckedStandardConsoleOutputStream)
             {
-                Assert.Fail("standard output stream should not be redirected");
-            }
-            m_standardConsoleOutputStream = Console.Out;
+                if (Console.IsOutputRedirected)
+                {
+                    Assert.Fail("standard output stream should not be redirected");
+                }
+                m_standardConsoleOutputStream = Console.Out;
+                m_IsCheckedStandardConsoleOutputStream = true;
+            } 
         }
 
-        // Checks asserts of class "ConsoleOutput".
+        // Checks asserts of class "ConsoleOutput_AbstractTest".
         // @expectedConsoleOutput specifies expected console output.
         protected void CheckInheritedAsserts(string expectedConsoleOutput)
         {
@@ -43,14 +48,17 @@ namespace UnitTestProject.BaseClasses
         }
         private TextOutputStorageDevice m_outputStorage;
 
-        [TestInitialize()]
-        public void TestInitialize()
+        // Starts checking console output until "TestCleanUp" is not called.
+        // This method needs to be called directly before testee functionality.
+        // INVARIANT: output stream should not be redirected after a testee operation of a testee class.
+        public void StartCheckingConsoleOutput()
         {
             OutputStorage = new TextOutputStorageDevice();
             Console.SetOut(OutputStorage);
             m_outputStreamBeforeOperation = Console.Out;
         }
 
+        // Stops checking console output, that is started by "StartCheckingConsoleOutput".
         [TestCleanup()]
         public void TestCleanUp()
         {
@@ -76,8 +84,10 @@ namespace UnitTestProject.BaseClasses
         }
         private TestContext testContextInstance;
 
-        protected readonly TextWriter m_standardConsoleOutputStream;
+        protected static TextWriter m_standardConsoleOutputStream;
         // output stream before a testee operation of a testee class
         protected TextWriter m_outputStreamBeforeOperation;
-    }
-}
+
+        private static bool m_IsCheckedStandardConsoleOutputStream = false;
+    } // ConsoleOutput_AbstractTest
+} // UnitTestProject.BaseClasses

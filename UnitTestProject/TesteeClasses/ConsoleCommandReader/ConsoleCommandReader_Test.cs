@@ -4,43 +4,69 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTestProject.BaseClasses;
 using Kata1;
+using UnitTestProject.TesteeClasses.ConsoleCommandReader;
 
 namespace UnitTestProject
 {
     [TestClass]
-    public class ConsoleCommandReader_Test : ConsoleOutput
+    public class ConsoleCommandReader_Test : ConsoleOutput_AbstractTest
     {
-        public ConsoleCommandReader_Test()
+
+        [TestMethod]
+        public void ListenForCommands_UserInputsEmptyString_CommandListeningFinished()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            List<string> ReadLine_Returns = new List<string>
+            {
+                ""
+            };
+            IUserInput_Stub userInput_stub = new IUserInput_Stub(ReadLine_Returns);
+            IOutputStringCalculator_Mock calcuator = new IOutputStringCalculator_Mock(new List<int>());
+            ConsoleCommandReader commandReader = new ConsoleCommandReader(calcuator, userInput_stub);
+            StartCheckingConsoleOutput();
+
+            commandReader.ListenForCommands();
+
+            CheckInheritedAsserts("");
         }
 
         [TestMethod]
-        public void ListenForCommands_InputOfValidUsersCommands_CommandsExecuted()
+        public void ListenForCommands_InputOfValidSimpleUsersCommands_CommandsExecuted()
         {
-            IStringCalculator calculator_stub = new IStringCalculator_Stub_Add_ReturnValue(90);
-            ILogger logger_mock = new CalculationResultLogger_Mock_NormalWrite("OutputStringCalculator_logs.txt");
-            IConsoleWriter_Mock_WriteData consoleWriter = new IConsoleWriter_Mock_WriteData("The result is 10" + Environment.NewLine);
-            OutputStringCalculator calculator = new OutputStringCalculator(calculator_stub, logger_mock, consoleWriter, null);
+            IOutputStringCalculator_Mock calculator = new IOutputStringCalculator_Mock(10);
 
-            List<string> userInputs = new List<string>
+            List<string> ReadLine_Returns = new List<string>
             {
-                "calc '1,3,5'",
+                "calc '1,3,5,1'",
                 ""
             };
-            IUserInput_Stub userInput_stub = new IUserInput_Stub(userInputs);
+            IUserInput_Stub userInput_stub = new IUserInput_Stub(ReadLine_Returns);
             ConsoleCommandReader commandReader = new ConsoleCommandReader(calculator, userInput_stub);
+            StartCheckingConsoleOutput();
 
             commandReader.ListenForCommands();
 
             CheckInheritedAsserts("The result is 10" + Environment.NewLine + "Another input please" + Environment.NewLine);
-
-
-            //
-            // TODO: Add test logic here
-            //
         }
-    }
-}
+
+        [TestMethod]
+        public void ListenForCommands_InputOfValidComplexUsersCommands_CommandsExecuted()
+        {
+            IOutputStringCalculator_Mock calculator = new IOutputStringCalculator_Mock(new List<int> { 10, 20 });
+
+            List<string> ReadLine_Returns = new List<string>
+            {
+                "calc '1,3,5,1'",
+                "calc '//[%][##][+-+]\n2%7+-+11'",
+                ""
+            };
+            IUserInput_Stub userInput_stub = new IUserInput_Stub(ReadLine_Returns);
+            ConsoleCommandReader commandReader = new ConsoleCommandReader(calculator, userInput_stub);
+            StartCheckingConsoleOutput();
+
+            commandReader.ListenForCommands();
+
+            CheckInheritedAsserts("The result is 10" + Environment.NewLine + "Another input please" + Environment.NewLine +
+                                  "The result is 20" + Environment.NewLine + "Another input please" + Environment.NewLine);
+        }
+    } // ConsoleCommandReader_Test
+} // UnitTestProject

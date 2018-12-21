@@ -1,6 +1,5 @@
 D:\VS_Projects\Katas\Kata1\bin\Debug\Kata1.exe.config
 D:\VS_Projects\Katas\Kata1\bin\Debug\Kata1.exe
 D:\VS_Projects\Katas\Kata1\bin\Debug\Kata1.pdb
-D:\VS_Projects\Katas\Kata1\obj\Debug\Kata1.csprojResolveAssemblyReference.cache
 D:\VS_Projects\Katas\Kata1\obj\Debug\Kata1.exe
 D:\VS_Projects\Katas\Kata1\obj\Debug\Kata1.pdb
